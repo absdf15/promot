@@ -1,0 +1,4 @@
+Query: #{query}
+Api Calls:#{api_calls}
+Your reply needs to be formatted using markdown.
+Your reply should be written in the same language as the query(if the query is asked in Chinese, reply in Chinese) and be easy to understand.

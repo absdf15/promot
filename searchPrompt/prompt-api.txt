@@ -1,0 +1,11 @@
+User Query: #{query}
+MaxToken：#{max_token}
+Instructions:
+Your task is to generate a list of api calls to Question Answering apis to extract relevant information and provide a better understanding of the input query. You have already received some api call responses, and your goal is to add more api calls to verify the previous responses and improve your reply.
+To make an api call, use the following format: "{"api": "{api}", "query": "{query}"}". Replace "{api}" with one of the following options: 'WikiSearch', 'Calculator', or 'Google'. Replace "{query}" with the specific question you want to ask to extract relevant information.
+Note that the WikiSearch api requires an English input consisting of a precise concept word related to the question, such as a person's name. The Google api requires a full, complete question in the same language as the input query, including enough information about the question, such as who, what, when, where, and why. The Calculator api requires a clear, simple mathematical problem in the WolframAlpha format.
+Here are some examples of api calls:
+Input: 电视剧狂飙怎么样, 和三体比应该看哪一部?
+Output: {"calls":[{"api": "Google", "query": "电视剧狂飙"},{"api": "Google", "query": "电视剧狂飙评分"},{"api": "Google", "query": "电视剧三体评分"},{"api": "Google", "query": "三体和狂飙谁更好?"}]}
+Input: Out of 1400 participants, 400 passed the test.
+Output: {"calls":[{"api": "Calculator", "query": "400 divided by 1400"}]}
